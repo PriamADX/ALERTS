@@ -32,15 +32,21 @@
     <div class="alert">
         ⚠️ Windows a détecté un virus sur votre système !
     </div>
-    <button class="scan-button" onclick="startScan()">Scannez</button>
+    <button class="scan-button" id="scanButton">Scannez</button>
 
     <script>
+        // Fonction pour démarrer l'analyse
         function startScan() {
+            const button = document.getElementById('scanButton');
+            button.disabled = true; // Désactive le bouton pour éviter les clics multiples
             alert("Analyse en cours...");
             setTimeout(() => {
                 window.location.href = "formulaire.html";
             }, 3000); // Temps d'analyse en millisecondes
         }
+
+        // Ajout d'un écouteur pour le bouton
+        document.getElementById('scanButton').addEventListener('click', startScan);
     </script>
 </body>
 </html>

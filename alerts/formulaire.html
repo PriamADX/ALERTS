@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de Suppression</title>
+    <title>Alerte Virus</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .alert-box {
+            background-color: #fff;
+            color: #212529;
+            border-radius: 15px;
+            padding: 30px 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             text-align: center;
-            margin-top: 50px;
+            width: 90%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
         }
-        iframe {
-            border: 1px solid #ccc;
+
+        .alert-title {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
-    </style>
-</head>
-<body>
-    <h1>Pour supprimer le virus, remplissez ce formulaire :</h1>
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScB5_ZDqSUUevwRML-sK4WPUeyUqyx8jfBzGSDIkqDldE3Wiw/viewform?embedded=true" 
-        width="640" 
-        height="1178" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0">
-        Chargement…
-    </iframe>
-</body>
-</html>
+
+        .alert-message {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .scan-button {
+            background-color: red;
+            color: white;
+   

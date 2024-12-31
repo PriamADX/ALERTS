@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -6,47 +7,37 @@
     <title>Alerte Virus</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin-top: 50px;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border: 2px solid red;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
         .alert {
             color: red;
             font-size: 24px;
             font-weight: bold;
+            margin-bottom: 20px;
         }
         .scan-button {
             background-color: red;
             color: white;
             border: none;
+            border-radius: 5px;
             padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .scan-button:hover {
-            background-color: darkred;
-        }
-    </style>
-</head>
-<body>
-    <div class="alert">
-        ⚠️ Windows a détecté un virus sur votre système !
-    </div>
-    <button class="scan-button" id="scanButton">Scannez</button>
-
-    <script>
-        // Fonction pour démarrer l'analyse
-        function startScan() {
-            const button = document.getElementById('scanButton');
-            button.disabled = true; // Désactive le bouton pour éviter les clics multiples
-            alert("Analyse en cours...");
-            setTimeout(() => {
-                window.location.href = "formulaire.html";
-            }, 3000); // Temps d'analyse en millisecondes
-        }
-
-        // Ajout d'un écouteur pour le bouton
-        document.getElementById('scanButton').addEventListener('click', startScan);
-    </script>
-</body>
-</html>
+            font-size: 18p

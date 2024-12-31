@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alerte Virus</title>
     <style>
+        /* Style de la page */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #007BFF, #0056b3);
@@ -17,6 +18,7 @@
             height: 100vh;
         }
 
+        /* Style de la boîte blanche */
         .alert-box {
             background-color: #fff;
             color: #212529;
@@ -44,4 +46,52 @@
         .scan-button {
             background-color: red;
             color: white;
-   
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .scan-button:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box">
+        <div class="alert-title">⚠️ Alerte Windows !</div>
+        <div class="alert-message">
+            Un virus a été détecté sur votre système.<br>
+            Cliquez sur le bouton ci-dessous pour démarrer l’analyse.
+        </div>
+        <button class="scan-button" id="scanButton">Scannez</button>
+    </div>
+
+    <script>
+        // Fonction pour démarrer l'analyse
+        document.getElementById('scanButton').addEventListener('click', () => {
+            const button = document.getElementById('scanButton');
+            button.disabled = true; // Désactive le bouton
+            button.innerText = "Analyse en cours...";
+            setTimeout(() => {
+                window.location.href = "formulaire.html";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
